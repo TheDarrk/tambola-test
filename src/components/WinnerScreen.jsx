@@ -22,12 +22,12 @@ function WinnerScreen({ gameData, onPlayAgain }) {
           </>
         )}
         <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '20px', margin: '20px 0', border: '1px solid #555', textAlign: 'left' }}>
-          <h3 style={{ color: '#4ecdc4', marginBottom: '15px', textAlign: 'center' }}>📊 GAME STATISTICS</h3>
+          <h3 style={{ color: '#4ecdc4', marginBottom: '25px', textAlign: 'center' }}>📊 GAME STATISTICS</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px', fontSize: '12px' }}>
-            <div><strong style={{ color: '#4ecdc4' }}>Players:</strong><br />{gameData.player_count} participants</div>
-            <div><strong style={{ color: '#4ecdc4' }}>Numbers Called:</strong><br />{(allCalledNumbers?.length) || 15} total</div>
-            <div><strong style={{ color: '#4ecdc4' }}>Game Mode:</strong><br />Classic Tombola</div>
-            <div><strong style={{ color: '#4ecdc4' }}>Winner Type:</strong><br />{winner !== null ? 'Full House' : 'No Winner'}</div>
+            <div><strong style={{ color: '#4ecdc4' }}>Players:</strong><br /> <br />{gameData.player_count}  participants</div>
+            <div><strong style={{ color: '#4ecdc4' }}>Numbers Called:</strong><br /> <br />{(allCalledNumbers?.length) || 15} total</div>
+            <div><strong style={{ color: '#4ecdc4' }}>Game Mode:</strong><br /> <br />Classic Tombola</div>
+            <div><strong style={{ color: '#4ecdc4' }}>Winner Type:</strong><br /> <br />{winner !== null ? 'Full House' : 'No Winner'}</div>
           </div>
         </div>
         <div className="called-numbers">
@@ -40,18 +40,6 @@ function WinnerScreen({ gameData, onPlayAgain }) {
             ))}
           </div>
           {winner !== null && (<p style={{ fontSize: '10px', color: '#4CAF50', marginTop: '15px', textAlign: 'center' }}>✅ Green numbers were correctly marked by the winner</p>)}
-        </div>
-        <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '15px', margin: '20px 0', border: '1px solid #555', fontSize: '10px' }}>
-          <h4 style={{ color: '#4ecdc4', marginBottom: '10px' }}>📋 NUMBERS BY RANGE</h4>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', textAlign: 'center' }}>
-            {[{ range: '1-30', section: 'Top Section' }, { range: '31-60', section: 'Middle Section' }, { range: '61-90', section: 'Bottom Section' }].map((item, index) => {
-              const sectionNumbers = allCalledNumbers?.filter(num => {
-                const ranges = [[1,30], [31,60], [61,90]];
-                return num >= ranges[index][0] && num <= ranges[index][1];
-              }) || [];
-              return <div key={index}><strong style={{ color: '#4ecdc4' }}>{item.section}</strong><br /><span style={{ color: '#ccc' }}>{item.range}</span><br /><span style={{ color: '#fff' }}>{sectionNumbers.length} numbers called</span></div>;
-            })}
-          </div>
         </div>
         <div style={{ marginTop: '30px' }}>
           <button className="pixel-button" onClick={onPlayAgain} style={{ fontSize: '14px', padding: '20px 30px', marginRight: '15px' }}>🎮 PLAY AGAIN</button>
@@ -70,8 +58,11 @@ function WinnerScreen({ gameData, onPlayAgain }) {
         </div>
         <div style={{ marginTop: '30px', fontSize: '10px', color: '#888', textAlign: 'center', borderTop: '1px solid #333', paddingTop: '20px' }}>
           <p>🎯 <strong>Did you know?</strong></p>
+          <br />
           <p>Tombola is also known as Housie or Bingo in different regions!</p>
+          <br />
           <p>The odds of winning depend on the number of players and calling strategy.</p>
+          <br />
           <p style={{ marginTop: '10px', color: '#4ecdc4' }}>Thanks for playing <strong>ALOHA X TOMBOLA</strong>! 🌺</p>
         </div>
       </div>
