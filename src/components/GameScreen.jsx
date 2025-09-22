@@ -417,7 +417,9 @@ function GameScreen({ gameData, apiBase, onGameEnd, onReset }) {
           border: '1px solid #ffd700',
           borderRadius: '5px'
         }}>
-          <h4 style={{ margin: '0 0 10px 0', color: '#ffd700' }}>🏆 Current Rankings:</h4>
+          <div style={{ textAlign: 'center' }}>
+          <h4 style={{ margin: '10px 0 30px 0', color: '#ffd700'}}>🏆 Current Rankings:</h4>
+          </div>
           <div style={{ display: 'flex', justifyContent: 'space-around' }}>
             {rankings.slice(0, 3).map((rank, index) => (
               <div key={index} style={{
@@ -425,7 +427,7 @@ function GameScreen({ gameData, apiBase, onGameEnd, onReset }) {
                 color: index === 0 ? '#ffd700' : index === 1 ? '#c0c0c0' : '#cd7f32',
                 textAlign: 'center'
               }}>
-                <div>{index + 1}. Player {rank.player + 1}</div>
+                <div style={{margin:'0 0 10px 0'}}>{index + 1}. Player {rank.player + 1}</div>
                 <div>{rank.points} points</div>
               </div>
             ))}
@@ -476,9 +478,13 @@ function GameScreen({ gameData, apiBase, onGameEnd, onReset }) {
         color: '#ccc'
       }}>
         <p>💡 <strong>HOW TO PLAY:</strong></p>
+        <br />
         <p>1. Click numbers on your ticket to mark them</p>
+        <br />
         <p>2. Mark numbers as they are called</p>
+        <br />
         <p>3. Achievements: 🏆 First 5 (50pts), 🎯 Early 7 (100pts), 🏠 Full House (200pts)</p>
+        <br />
         <p>4. Green = valid mark, Red = your mark, Yellow = called number</p>
       </div>
     </div>
