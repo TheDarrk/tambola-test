@@ -1,6 +1,6 @@
 # 🎮 Aloha X - Pixelated Tombola Game
 
-A modern, pixelated-themed Tombola (Housie/Bingo) game built with **Vite + React** frontend and **Python FastAPI** backend. Features real-time number calling, automatic winner detection, and support for 3-5 players.
+A modern, pixelated-themed Tombola (Housie/Bingo) game built with **Vite + React** frontend and **Python FastAPI** backend. Features real-time number calling, automatic winner detection,achivement of early 5 and early 7, and support for 3-5 players.
 
 ## 🌟 Features
 
@@ -10,7 +10,6 @@ A modern, pixelated-themed Tombola (Housie/Bingo) game built with **Vite + React
 - **Smart Ticket Generation** - Proper Tombola ticket structure (3 sections × 3 columns)
 - **Winner Detection** - Automatic full house validation
 - **Responsive Design** - Works on desktop and mobile devices
-- **Vercel Deployment Ready** - Optimized for serverless deployment
 
 ## 🎯 Game Rules
 
@@ -24,9 +23,10 @@ A modern, pixelated-themed Tombola (Housie/Bingo) game built with **Vite + React
    - 15 random numbers are generated from the specified ranges
    - Numbers are called one by one (manually or automatically)
    - Players mark numbers on their tickets as they're called
+   - They can have achivements of early 5 early 7
    - First player to mark all called numbers wins!
 
-3. **Winning**: Full House - player who marks all 15 called numbers wins
+3. **Winning**: Full House - player who marks all 15 called numbers wins and achive all early achivement
 
 ## 🚀 Quick Start
 
@@ -57,27 +57,6 @@ A modern, pixelated-themed Tombola (Housie/Bingo) game built with **Vite + React
    ```
 
 4. **Open your browser** and navigate to `http://localhost:5173`
-
-## 🚀 Deployment to Vercel
-
-### Automatic Deployment (Recommended)
-
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-
-2. **Connect to Vercel**
-   - Go to [vercel.com](https://vercel.com)
-   - Import your GitHub repository
-   - Vercel will automatically detect the configuration
-
-3. **Deploy**
-   ```bash
-   npx vercel --prod
-   ```
 
 ## 🎮 How to Play
 
@@ -147,11 +126,5 @@ python main.py   # Start backend server
 - CORS middleware for frontend integration
 - In-memory game state
 
-**Deployment:**
-- Vercel (serverless functions)
-- Automatic GitHub integration
-- Global CDN distribution
-
----
 
 **Enjoy playing Aloha X Tombola! 🌺🎮**
