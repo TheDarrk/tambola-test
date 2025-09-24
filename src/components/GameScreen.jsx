@@ -314,7 +314,7 @@ function GameScreen({ gameData, apiBase, onGameEnd, onReset }) {
               style={{
                 backgroundColor: isValidMark ? '#4ecdc4' : // Valid mark (green)
                               isMarked ? '#ff6b6b' : // Invalid mark (red)
-                              isCalled ? 'rgba(255, 255, 0, 0.3)' : // Called but not marked (yellow)
+                              // isCalled ? 'rgba(255, 255, 0, 0.3)' : // Called but not marked (yellow)
                               'rgba(255, 255, 255, 0.1)', // Default
                 border: number != null ? '1px solid #666' : '1px solid transparent',
                 cursor: number != null ? 'pointer' : 'default'
